@@ -1,4 +1,4 @@
-#include <stdio.h>  // Importar librerias
+#include <stdio.h>  // Importar librerias, en este caso la librería de uso de entrada y salida estandar
 // stdio.h librería estandar de entrada y salida
 
 /* Codigo hecho por Moy el 15 de marzo del 2022
