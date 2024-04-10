@@ -16,7 +16,7 @@ int main() {
 
     return 0;
 }
-
+// //? Variables Globales
 // //! La variable esta afuera de la funcion principal
 // int variable = 0;
 // int main() {
