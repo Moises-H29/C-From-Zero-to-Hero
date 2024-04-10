@@ -4,7 +4,7 @@
         ***OPERADORES ARITMETICOS***
 OPERADOR        NOMBRE           SIGNIFICADO
     +           Aditivo          Suma
-    -           Inverso          aditivo Resta
+    -           Inverso          Resta
     *           Producto         Multiplicación
     /           Cociente         División
     %           Módulo           Residuo de una división
