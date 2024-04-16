@@ -4,6 +4,7 @@ Calcular su salario e imprimirlo*/
 #include <stdio.h>
 
 int main(){
+    
     int horas;
     float salario_hora, salario_total;
 
