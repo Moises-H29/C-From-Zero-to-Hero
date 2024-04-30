@@ -16,6 +16,7 @@ int main(){
           "\n\t2) Retirar Dinero"
           "\n\t3) Salir del Cajero\n");
 
+    printf("\nIntroduce tu opcion: ");
     scanf("%d",&opcion);
     
     printf("\n\nOpcion %d seleccionada\n",opcion);
