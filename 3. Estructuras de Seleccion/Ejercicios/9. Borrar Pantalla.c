@@ -1,6 +1,6 @@
 // Hacer un programa que borre la pantalla al pulsar 1
 #include <stdio.h>
-#include <stdlib.h>  // Librería con comandos para el sistema
+#include <stdlib.h>  // Librería con comandos para el sistema (no son lo mismo que las llamadas al sistema)
 
 int main(){
 
