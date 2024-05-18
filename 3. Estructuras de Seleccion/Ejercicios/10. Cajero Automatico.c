@@ -8,7 +8,7 @@ int main(){
     int opcionElegida;
 
     printf("Bienvenido a tu cajero virtual\n");
-    printf("\nEscribe lo que quieres hacer");
+    printf("\nEscribe lo que quieres hacer\n");
 
     printf("1) Depositar dinero a la cuenta\n"
     "2) Retirar dinero de la cuenta\n"
@@ -22,6 +22,11 @@ int main(){
         printf("***DEPOSITAR DINERO***\n");
         printf("Escriba la cantidad que desea ingresar\n");
         scanf("%f",&cantidad);
+        if(cantidad <= 0){
+            printf("Cantidad invalida\n",saldo);
+            printf("Ingrese otra cantidad\n");
+            scanf("%f",&cantidad);
+        }
         saldo += cantidad;
         printf("Su saldo actual es de $%.2f",saldo);
         break;
@@ -42,9 +47,10 @@ int main(){
         printf("Su saldo actual es de $%.2f\n",saldo);
         break;
     case 4:
-        
+        printf("***SALIENDO***\n");
         break;
     default:
+        printf("Opcion invalida\n");
         break;
     }
 
