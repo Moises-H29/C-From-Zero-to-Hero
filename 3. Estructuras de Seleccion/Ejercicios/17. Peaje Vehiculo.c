@@ -4,6 +4,7 @@ según un valor numérico
 2 - autobus, peaje = $3000.
 3 - motocicleta, peaje = $300 
 otro caso - Vehíulo no autorizado */
+
 #include <stdio.h>
 #include <string.h>
 
