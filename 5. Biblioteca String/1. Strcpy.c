@@ -4,7 +4,7 @@
 //! y además sobrescribe el contenido del destino (de existir).
 
 #include <stdio.h>
-#include <string.h> //* Recordar importar librería String
+#include <string.h> //? Recordar importar librería String
 
 int main(){
 
