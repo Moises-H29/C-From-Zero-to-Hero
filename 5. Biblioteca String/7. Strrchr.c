@@ -1,5 +1,6 @@
 //* strrchr(Cadena, Caracter);
 //* Regresa el RESTANTE de la cadena a partir de la ÚLTIMA aparición del caracter indicado (incluyendo al caracter).
+// * Encuentra la ultima aparicion del caracter
 
 #include <stdio.h>
 #include <string.h>  //? No olvidar importar librería String
