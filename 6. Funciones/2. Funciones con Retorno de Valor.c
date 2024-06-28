@@ -1,4 +1,7 @@
 // Escribir una función que sume dos numeros
+
+//! Cuando una función retorna un valor, el llamado de la función devolverá los valores del return 
+
 #include <stdio.h>
 
 // Prototipo de la funcion
