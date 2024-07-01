@@ -15,6 +15,7 @@ int main(){
     scanf("%d %d",&a,&b);
 
     printf("La suma de los numeros es: %d",sumar(a,b));  // Llamar a la función para que se ejecute //! Si no se llama, no se ejecutará
+    // Mismo caso con las funciones sin retorno
 
     return 0;
 }
