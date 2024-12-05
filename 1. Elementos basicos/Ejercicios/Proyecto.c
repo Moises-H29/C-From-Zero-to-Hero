@@ -23,6 +23,7 @@ main()
     printf("================================================\n");
     printf("SELECCIONAR OPCION: ");
     scanf("%d", &opcion);
+    getchar();
 
     switch (opcion) 
     {
