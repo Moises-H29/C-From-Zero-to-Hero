@@ -18,6 +18,8 @@ main()
     printf("6 Convertir cadena a minusculas\n");
     printf("7 Contar palabras en una cadena\n");
     printf("8 Imprimir abecedario en mayusculas y minusculas\n");
+    printf("9 Programa 4 del Examen 2\n");
+    printf("10 Programa 2 del Examen 2\n");
     printf("================================================\n");
     printf("SELECCIONAR OPCION: ");
     scanf("%d", &opcion);
@@ -218,6 +220,81 @@ main()
 
             for (letra = 'A'; letra <= 'Z'; letra++) 
                 printf("%c %c\n", letra, letra + 32);
+            break;
+        }
+        case 9:
+        {
+            int i, com0, err;
+            float venta, com10 = 0, com17 = 0, com22 = 0;
+            com0 = err = 0;
+            
+            printf("RESUMEN DE COMISIONES\n");
+            
+            for (i = 1; i <= 20; i++) 
+            {
+                printf("Emp: ");
+                scanf("%f", &venta);
+                
+                if (venta > 0)
+                    if (venta >= 5000 && venta <= 10000)
+                        com10 += venta * 0.1;
+                    else if (venta > 10000 && venta <= 20000)
+                        com17 += venta * 0.17;
+                    else if (venta > 20000)
+                        com22 += venta * 0.22;
+                    else
+                        com0++;
+                else
+                    err++;
+            }
+            printf("TOTAL DE COMISIONES X RANGO\n");
+            printf("RANGO 1 = %.2f\n", com10);
+            printf("RANGO 2 = %.2f\n", com17);
+            printf("RANGO 3 = %.2f\n", com22);
+            printf("SIN COMISION = %d\n", com0);
+            printf("DATOS ERRONEOS = %d\n", err);
+            break;
+        }
+        case 10:
+        {
+            char opc;
+            int i, almacen = 0, planeacion = 0, control = 0, err = 0, tot;
+
+            printf("*** Programa 2 del Examen 2 ***\n");
+
+            for (i = 0; i < 500; i++) 
+            {
+                printf("Depto: ");
+                scanf(" %c", &opc);
+                opc = toupper(opc);
+
+                if (opc == 'A' || opc == 'P' || opc == 'C') 
+                {
+                    switch (opc) 
+                    {
+                        case 'A':
+                            almacen++;
+                            break;
+                        case 'P':
+                            planeacion++;
+                            break;
+                        case 'C':
+                            control++;
+                            break;
+                    }
+                } 
+                else 
+                    err++;
+            }
+
+            tot = almacen + planeacion + control;
+
+            printf("Total de Empleados por Categoria\n");
+            printf("Almacen = %d\n", almacen);
+            printf("Planeacion = %d\n", planeacion);
+            printf("Control de Calidad = %d\n", control);
+            printf("TOTAL DE EMPLEADOS A-P-C = %d\n", tot);
+            printf("TOTAL DE EMPLEADOS CATEGORIA NO EXISTE = %d\n", err);
             break;
         }
         default: 
