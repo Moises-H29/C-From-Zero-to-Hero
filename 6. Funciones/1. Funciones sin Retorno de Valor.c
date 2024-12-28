@@ -1,4 +1,4 @@
-// Funciones
+// Funciones en C
 
 //! Funciones sin retorno de valor
 
