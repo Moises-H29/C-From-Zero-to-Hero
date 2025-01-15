@@ -1,3 +1,5 @@
+// Proyecto Programación 1
+// Hernandez Pacheco Moises
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
