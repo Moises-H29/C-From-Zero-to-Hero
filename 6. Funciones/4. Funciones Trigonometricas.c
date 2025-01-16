@@ -10,6 +10,7 @@ cos(x) -> Calcula el Coseno de x
 sin(x) -> Calcula el Seno de x
 tan(x) -> Calcula la Tangente de x
 */
+#define _USE_MATH_DEFINES
 #include <stdio.h>
 #include <math.h>
 
@@ -26,6 +27,10 @@ void funcionTrigonometrica(){
         scanf("%f",&x);
 
     cambio=asin(x);
-    printf("El resultado es %f",cambio);
+    printf("El resultado es %f\n",cambio);
+
+
+    double pi = M_PI;
+    printf("%.20lf",pi);
 
 }
