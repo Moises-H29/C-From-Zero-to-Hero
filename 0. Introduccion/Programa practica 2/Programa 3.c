@@ -104,7 +104,7 @@ int main(){
                     int m, n, p, q;
                     float mat1[T][T], mat2[T][T], result[T][T];
             
-                    printf("\n*** Has elegido Multiplicación de matrices ***\n");
+                    printf("\n*** Has elegido Multiplicacion de matrices ***\n");
                     printf("\nIngresa las dimensiones de la primera matriz (filas columnas): ");
                     scanf("%d %d", &m, &n);
                     printf("\nIngresar matriz A:\n");
@@ -115,11 +115,11 @@ int main(){
                     printf("\nIngresar matriz B:\n");
                     fillMatrix(p, q, mat2);
             
-                    // Verificar si la multiplicación es posible
+                    // Verificar si la multiplicacion es posible
                     if (n != p) {
                         printf("\nNo se pueden multiplicar matrices de dimensiones %dx%d y %dx%d.\n", m, n, p, q);
                     } else {
-                        // Realizar la multiplicación
+                        // Realizar la multiplicacion
                         multMatrix(m, n, p, q, mat1, mat2, result);
             
                         // Imprimir resultado
@@ -139,7 +139,7 @@ int main(){
                     float escalar;
                     float mat[T][T], result[T][T];
             
-                    printf("\n*** Has elegido Multiplicación escalar ***\n");
+                    printf("\n*** Has elegido Multiplicacion escalar ***\n");
                     printf("\nIngresa el numero de filas: ");
                     scanf("%d", &m);
                     printf("\nIngresa el numero de columnas: ");
@@ -150,7 +150,7 @@ int main(){
                     printf("\nIngrese el escalar: ");
                     scanf("%f", &escalar);
             
-                    // Realizar la multiplicación escalar
+                    // Realizar la multiplicacion escalar
                     multEscalar(escalar, m, n, mat, result);
             
                     // Imprimir resultado
@@ -175,7 +175,7 @@ int main(){
                     printf("\nIngresar matriz:\n");
                     fillMatrix(m, n, mat);
             
-                    // Realizar la transposición
+                    // Realizar la transposicion
                     transMatrix(m, n, mat, result);
             
                     // Imprimir resultado
@@ -191,11 +191,11 @@ int main(){
                     float mat[T][T], inverse[T][T];
             
                     printf("\n*** Has elegido Inversa de una matriz ***\n");
-                    printf("\nIngresa el tamaño de la matriz cuadrada (n x n): ");
+                    printf("\nIngresa el tamanio de la matriz cuadrada (n x n): ");
                     scanf("%d", &n);
             
                     if (n <= 0 || n > T) {
-                        printf("\nTamaño inválido.\n");
+                        printf("\nTamanio invalido.\n");
                         break;
                     }
             
@@ -242,7 +242,7 @@ int main(){
                 printf("\nSaliendo del programa...\n");
                 break;
             default:
-                printf("\nOpción no válida, intenta de nuevo.\n");
+                printf("\nOpcion no valida, intenta de nuevo.\n");
         }
     }while(opc!=salir);
 
