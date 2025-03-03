@@ -43,30 +43,32 @@ int main(){
         scanf("%d", &opc);
         switch (opc) {
             case suma:
-                int m, n;
-                float mat1[T][T], mat2[T][T], result[T][T];
-        
-                printf("\n*** Has elegido Suma de matrices ***\n");
-                printf("\nIngresa el numero de filas: ");
-                scanf("%d", &m);
-                printf("\nIngresa el numero de columnas: ");
-                scanf("%d", &n);
-        
-                printf("\nIngresar matriz A:\n");
-                fillMatrix(m, n, mat1);
-                printf("\nIngresar matriz B:\n");
-                fillMatrix(m, n, mat2);
-        
-                // Realizar la suma de matrices
-                addMatrix(m, n, mat1, mat2, result);
-        
-                // Imprimir resultado
-                printf("\n***** Suma *****\n\n");
-                printMatrix(m, n, mat1);
-                printf("\n + \n");
-                printMatrix(m, n, mat2);
-                printf("\n = \n");
-                printMatrix(m, n, result);
+                {
+                    int m, n;
+                    float mat1[T][T], mat2[T][T], result[T][T];
+            
+                    printf("\n*** Has elegido Suma de matrices ***\n");
+                    printf("\nIngresa el numero de filas: ");
+                    scanf("%d", &m);
+                    printf("\nIngresa el numero de columnas: ");
+                    scanf("%d", &n);
+            
+                    printf("\nIngresar matriz A:\n");
+                    fillMatrix(m, n, mat1);
+                    printf("\nIngresar matriz B:\n");
+                    fillMatrix(m, n, mat2);
+            
+                    // Realizar la suma de matrices
+                    addMatrix(m, n, mat1, mat2, result);
+            
+                    // Imprimir resultado
+                    printf("\n***** Suma *****\n\n");
+                    printMatrix(m, n, mat1);
+                    printf("\n + \n");
+                    printMatrix(m, n, mat2);
+                    printf("\n = \n");
+                    printMatrix(m, n, result);
+                }
                 break;        
                 case resta:
                 {
@@ -121,7 +123,7 @@ int main(){
                         multMatrix(m, n, p, q, mat1, mat2, result);
             
                         // Imprimir resultado
-                        printf("\n***** Multiplicación *****\n\n");
+                        printf("\n***** Multiplicacion *****\n\n");
                         printMatrix(m, n, mat1);
                         printf("\n * \n");
                         printMatrix(p, q, mat2);
@@ -152,7 +154,7 @@ int main(){
                     multEscalar(escalar, m, n, mat, result);
             
                     // Imprimir resultado
-                    printf("\n***** Multiplicación escalar *****\n\n");
+                    printf("\n***** Multiplicacion por escalar *****\n\n");
                     printf("%.2f * \n", escalar);
                     printMatrix(m, n, mat);
                     printf("\n = \n");
@@ -183,14 +185,58 @@ int main(){
                     printMatrix(n, m, result);
                 }
                 break;            
-            case inversa:
-                printf("\nHas elegido Inversa de una matriz.\n");
-                break;
+                case inversa:
+                {
+                    int n;
+                    float mat[T][T], inverse[T][T];
+            
+                    printf("\n*** Has elegido Inversa de una matriz ***\n");
+                    printf("\nIngresa el tamaño de la matriz cuadrada (n x n): ");
+                    scanf("%d", &n);
+            
+                    if (n <= 0 || n > T) {
+                        printf("\nTamaño inválido.\n");
+                        break;
+                    }
+            
+                    printf("\nIngresar matriz:\n");
+                    fillMatrix(n, n, mat);
+            
+                    if (invMatrix(n, mat, inverse)) {
+                        printf("\n***** Matriz Inversa *****\n\n");
+                        printMatrix(n, n, inverse);
+                    }
+                }
+                break;            
             case determinante:
-                printf("\nHas elegido Determinante de una matriz.\n");
+                {
+                    int n;
+                    float mat[T][T];
+                    printf("\n*** Has elegido Determinante de una matriz ***\n");
+                    printf("\nIngresa el tamanio de la matriz cuadrada (n x n): ");
+                    scanf("%d", &n);
+            
+                    printf("\nIngresar matriz:\n");
+                    fillMatrix(n, n, mat);
+            
+                    float det = detMatrix(n, mat);
+                    printf("\nDeterminante: %.2f\n", det);
+                }
                 break;
             case singular:
-                printf("\nHas elegido Verificar si una matriz es singular.\n");
+                {
+                    int n;
+                    float mat[T][T];
+                    printf("\nHas elegido Verificar si una matriz es singular.\n");
+                    printf("\nIngresa el tamanio de la matriz cuadrada (n x n): ");
+                    scanf("%d", &n);
+            
+                    printf("\nIngresar matriz:\n");
+                    fillMatrix(n, n, mat);
+            
+                    float det = detMatrix(n, mat);
+                    det == 0 ? printf("\nMATRIZ SINGULAR") : printf("\nMATRIZ NO SINGULAR");
+                }
                 break;
             case salir:
                 printf("\nSaliendo del programa...\n");
