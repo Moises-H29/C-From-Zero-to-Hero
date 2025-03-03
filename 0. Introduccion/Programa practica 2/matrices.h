@@ -1,6 +1,3 @@
-#ifndef MATRIX_OPERATIONS_H
-#define MATRIX_OPERATIONS_H
-
 #include <stdio.h>
 
 #define T 50  // Tamaño máximo de la matriz
@@ -84,4 +81,3 @@ void transMatrix(int m, int n, float mat[T][T], float result[T][T]) {
     }
 }
 
-#endif  // MATRIX_OPERATIONS_H
