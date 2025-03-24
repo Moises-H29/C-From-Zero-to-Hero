@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #include <time.h>
-#define TAM 3
+#define TAM 7
 typedef enum{
     imprime = 'a',
     primo,
@@ -21,13 +22,16 @@ void caratula(){
 			"\nGrupo 2251\n\n");
 }
 
+int numeroAleatorio(){
+    return 5 + rand()%(71 - 5);
+}
+
 void llenar(int mac[TAM][TAM]){
-    int i, j;
-    printf("Ingrese las entradas de su matriz\n");
+    int i, j, num;
     for(i=0; i<TAM; i++){
         for(j=0; j<TAM; j++){
-            printf("mac[%d][%d]:  ",i+1,j+1);
-            scanf("%d",&mac[i][j]);
+            num = numeroAleatorio();
+            mac[i][j] = num;
         }
     }
 }
@@ -72,6 +76,7 @@ int diagonal(int mac[TAM][TAM]){
 }
 
 int main(){
+    srand(time(NULL));
     time_t tiempoInicial, tiempoFinal;
 	tiempoInicial = time(NULL);
     printf("BIENVENIDO A ARREGLO MAC\n");
@@ -119,7 +124,7 @@ int main(){
             break;
         }
         if(resp=='S' || resp=='s'){
-            printf("\n\nDesea volver a usar el sistema? (Presione S o s para continuar, cualquiero otra letra para salir)  ");
+            printf("\n\nDesea volver a usar el sistema? (Presione S o s para continuar, cualquier otra letra para salir)  ");
             scanf(" %c",&resp);
         }
 
