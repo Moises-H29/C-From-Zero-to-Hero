@@ -10,12 +10,13 @@ typedef enum{
     salir
 }opcion;
 
+// Prototipos
 void caratula();
 int numeroAleatorio();
 void llenar(int mac[TAM][TAM]);
 void imprimir(int mac[TAM][TAM]);
 int esPrimo(int n);
-void primos(int mac[TAM][TAM]);
+int primos(int mac[TAM][TAM]);
 int diagonal(int mac[TAM][TAM]);
 
 int main(){
@@ -48,7 +49,7 @@ int main(){
             printf("Matriz original:\n");
             imprimir(mac);
             printf("\nMatriz modificada:\n");
-            primos(mac);
+            printf("\nLa cantidad de valores modificados es %d: \n",primos(mac));
             imprimir(mac);
             break;
         case diago:
@@ -100,11 +101,10 @@ int numeroAleatorio(){
 }
 
 void llenar(int mac[TAM][TAM]){
-    int i, j, num;
+    int i, j;
     for(i=0; i<TAM; i++){
         for(j=0; j<TAM; j++){
-            num = numeroAleatorio();
-            mac[i][j] = num;
+            mac[i][j] = numeroAleatorio();
         }
     }
 }
@@ -131,13 +131,17 @@ int esPrimo(int n){
     return 1;
 }
 
-void primos(int mac[TAM][TAM]){
-    int i, j;
+int primos(int mac[TAM][TAM]){
+    int i, j, cont=0;
     for(i=0; i<TAM; i++){
         for(j=0; j<TAM; j++){
-            if(esPrimo(mac[i][j])) mac[i][j] = -1;
+            if(esPrimo(mac[i][j])){
+                mac[i][j] = -1;
+                cont++;
+            }
         }
     }
+    return cont;
 }
 
 int diagonal(int mac[TAM][TAM]){
