@@ -10,70 +10,13 @@ typedef enum{
     salir
 }opcion;
 
-void caratula(){
-	printf("\nUniversidad Nacional Autonoma de Mexico"
-			"\nFacultad de Estudios Superiores Acatlan"
-			"\nLicenciatura en Matematicas Aplicadas y Computacion"
-            "\nHernandez Pacheco Moises"
-            "\nFlores Vidal Alan Miguel"
-            "\nMartinez Gonzalez Christian"
-            "\nSampayo Aguirre Daniela Fernanda"
-			"\nProgramacion 2"
-			"\nGrupo 2251\n\n");
-}
-
-int numeroAleatorio(){
-    return 5 + rand()%(71 - 5);
-}
-
-void llenar(int mac[TAM][TAM]){
-    int i, j, num;
-    for(i=0; i<TAM; i++){
-        for(j=0; j<TAM; j++){
-            num = numeroAleatorio();
-            mac[i][j] = num;
-        }
-    }
-}
-
-void imprimir(int mac[TAM][TAM]){
-    int i, j;
-    for(i=0; i<TAM; i++){
-        for(j=0; j<TAM; j++){
-            printf("[%d]\t",mac[i][j]);
-        }
-        printf("\n");
-    }
-}
-
-int esPrimo(int n){
-    if(n<2) return 0;
-
-    int lim = sqrt(n);
-    int i = 2;
-    while(i<=lim){
-        if(n%i==0) return 0;
-        i++;
-    }
-    return 1;
-}
-
-void primos(int mac[TAM][TAM]){
-    int i, j;
-    for(i=0; i<TAM; i++){
-        for(j=0; j<TAM; j++){
-            if(esPrimo(mac[i][j])) mac[i][j] = -1;
-        }
-    }
-}
-
-int diagonal(int mac[TAM][TAM]){
-    int i, cont=0;
-    for(i=0; i<TAM; i++){
-        cont += mac[i][i];
-    }
-    return cont;
-}
+void caratula();
+int numeroAleatorio();
+void llenar(int mac[TAM][TAM]);
+void imprimir(int mac[TAM][TAM]);
+int esPrimo(int n);
+void primos(int mac[TAM][TAM]);
+int diagonal(int mac[TAM][TAM]);
 
 int main(){
     srand(time(NULL));
@@ -137,4 +80,70 @@ int main(){
 	printf("\n Hora de salida: %s",asctime(localtime(&tiempoFinal)));
 	printf("\n Tiempo de permanencia: %4.2f seg",difftime(tiempoFinal,tiempoInicial));
     return 0;
+}
+
+
+void caratula(){
+	printf("\nUniversidad Nacional Autonoma de Mexico"
+			"\nFacultad de Estudios Superiores Acatlan"
+			"\nLicenciatura en Matematicas Aplicadas y Computacion"
+            "\nHernandez Pacheco Moises"
+            "\nFlores Vidal Alan Miguel"
+            "\nMartinez Gonzalez Christian"
+            "\nSampayo Aguirre Daniela Fernanda"
+			"\nProgramacion 2"
+			"\nGrupo 2251\n\n");
+}
+
+int numeroAleatorio(){
+    return 5 + rand()%(71 - 5);
+}
+
+void llenar(int mac[TAM][TAM]){
+    int i, j, num;
+    for(i=0; i<TAM; i++){
+        for(j=0; j<TAM; j++){
+            num = numeroAleatorio();
+            mac[i][j] = num;
+        }
+    }
+}
+
+void imprimir(int mac[TAM][TAM]){
+    int i, j;
+    for(i=0; i<TAM; i++){
+        for(j=0; j<TAM; j++){
+            printf("[%d]\t",mac[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int esPrimo(int n){
+    if(n<2) return 0;
+
+    int lim = sqrt(n);
+    int i = 2;
+    while(i<=lim){
+        if(n%i==0) return 0;
+        i++;
+    }
+    return 1;
+}
+
+void primos(int mac[TAM][TAM]){
+    int i, j;
+    for(i=0; i<TAM; i++){
+        for(j=0; j<TAM; j++){
+            if(esPrimo(mac[i][j])) mac[i][j] = -1;
+        }
+    }
+}
+
+int diagonal(int mac[TAM][TAM]){
+    int i, cont=0;
+    for(i=0; i<TAM; i++){
+        cont += mac[i][i];
+    }
+    return cont;
 }
